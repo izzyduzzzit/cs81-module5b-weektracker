@@ -9,3 +9,16 @@ let myWeek = [
     { day: "Saturday", activity: "Hiking", category: "Exercise", hoursSpent: 3, enjoyment: 10, timeOfDay: "Morning" },
     { day: "Sunday", activity: "Gaming", category: "Leisure", hoursSpent: 2, enjoyment: 7, timeOfDay: "Afternoon" }
 ];
+
+/* Predictions:
+
+Which activity will have the highest enjoyment?
+I believe Hiking will have the highest enjoyment because it has an enjoyment rating of 10.
+
+What category will dominate your week?
+I believe Exercise will dominate my week because I have 4 activities in that category.
+
+What patterns might exist around time of day?
+I think various physical activities will be in the morning, while leisure activities will be in the afternoon or evening.
+
+*/
