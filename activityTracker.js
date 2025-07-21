@@ -22,3 +22,31 @@ What patterns might exist around time of day?
 I think various physical activities will be in the morning, while leisure activities will be in the afternoon or evening.
 
 */
+
+function totalExerciseHours(week) {
+  return week
+    .filter(act => act.category === "Exercise")
+    .reduce((sum, act) => sum + act.hoursSpent, 0);
+}
+
+function averageEnjoymentByTimeOfDay(week) {
+  let grouped = {};
+  week.forEach(act => {
+    if (!grouped[act.timeOfDay]) {
+      grouped[act.timeOfDay] = [];
+    }
+    grouped[act.timeOfDay].push(act.enjoyment);
+  });
+
+  let result = {};
+  for (let time in grouped) {
+    let scores = grouped[time];
+    let average = scores.reduce((sum, score) => sum + score, 0) / scores.length;
+    result[time] = average.toFixed(2);
+  }
+
+  return result;
+}
+
+console.log("Average enjoyment by time of day:", averageEnjoymentByTimeOfDay(myWeek));
+console.log("Total hours spent on exercise:", totalExerciseHours(myWeek));
